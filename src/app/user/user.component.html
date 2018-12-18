@@ -1,0 +1,11 @@
+
+<!-- <input type="text" [formControl]="searchField" placeholder="Enter search string"> -->
+
+<div class="text-center">
+  <p class="loading" *ngIf="loading">Loading...</p>
+</div>
+
+
+<ul *ngFor="let user of result">
+  <li > {{user.getName()}}  </li>
+</ul>
