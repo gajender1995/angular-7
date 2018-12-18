@@ -7,17 +7,24 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  data : any;
-  constructor( private http : HttpClient ) { }
+  data: any;
+  constructor(private http: HttpClient) { }
 
-  getData() : Observable<LoginModel[]> {
+  getData(): Observable<LoginModel[]> {
     return this.http.get("https://jsonplaceholder.typicode.com/users").pipe(
-      map( res => {
+      map(res => {
         this.data = res;
-        return this.data.map( item => {
+        return this.data.map(item => {
           return new LoginModel(
-            item.name ,
-            item.email, {city: item.address.city, zipcode:item.address.zipcode}
+            item.name,
+            item.email,
+            {
+              city: item.address.city,
+              zipcode: item.address.zipcode,
+              geo: {
+                lat: item.address.geo.lat
+              }
+            }
           )
         })
       })

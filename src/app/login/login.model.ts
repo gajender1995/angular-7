@@ -9,12 +9,19 @@ export class LoginModel {
     }
 
     fullAddress() {
-        return this.address;
+        return this.name + '__  '+this.address.city + this.address.geo.lat;
     }
 
 }
 //todo 
 interface Address {
     city : string,
-    zipcode : string
+    zipcode : string,
+    geo : {
+        lat : string
+    }
 }
+
+// interface Geo {
+//     lat : string
+// }
