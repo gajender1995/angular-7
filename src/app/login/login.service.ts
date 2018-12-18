@@ -17,7 +17,7 @@ export class LoginService {
         return this.data.map( item => {
           return new LoginModel(
             item.name ,
-            item.email
+            item.email, {city: item.address.city, zipcode:item.address.zipcode}
           )
         })
       })
