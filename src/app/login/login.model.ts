@@ -13,8 +13,13 @@ export class LoginModel {
     }
 
 }
-//todo 
+interface Geo{
+    lat: string,
+    lng: string
+}
+
 interface Address {
     city : string,
-    zipcode : string
+    zipcode : string,
+    geo: Geo
 }
