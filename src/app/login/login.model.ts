@@ -1,17 +1,20 @@
 export class LoginModel {
-    constructor(
-        public name : String,
-        public email : String 
-    ){}
+    name : String='';
+    email : String ='';
+    address:Address;
+    constructor( name : string, email : string, address:Address){
+      this.name = name;
+      this.email=email;
+      this.address=address;
+    }
 
     fullAddress() {
-        return this.name;
-        // i want name + city here 
+        return this.address;
     }
 
 }
 //todo 
-interface address {
+interface Address {
     city : string,
     zipcode : string
 }
